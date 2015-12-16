@@ -4,31 +4,13 @@ var naughtyOrNice1 = function(stringList) {
   var niceCount = 0;
 
   stringArray.forEach(function(string, idx) {
-    var counts = {
-      vowels: 0,
-      dupes: 0,
-      isNaughty: false
-    };
 
-    for (i = 0; i < string.length; i += 1) {
-      var cur = string.charAt(i);
-      var pre = string.charAt(i - 1);
+    var hasRepeat = /(\w)\1+/g.test(string);
+    var hasThreeVowels = /[aeiou].*[aeiou].*[aeiou]/g.test(string);
+    var hasNaughty = /ab|cd|pq|xy/g.test(string);
 
-      if (cur === pre) {
-        counts.dupes += 1;
-      }
-      if (cur === 'a' || cur === 'e' || cur === 'i' || cur === 'o' || cur === 'u') {
-        counts.vowels += 1;
-      }
-      if (pre + cur === 'ab' || pre + cur === 'cd' || pre + cur === 'pq' || pre + cur === 'xy') {
-        counts.isNaughty = true;
-        break;
-      }
-    }
+    if (hasRepeat && hasThreeVowels && !hasNaughty) niceCount += 1;
 
-    if (counts.isNaughty !== true && counts.vowels > 2 && counts.dupes > 0) {
-      niceCount += 1;
-    }
   });
   return niceCount;
 }
