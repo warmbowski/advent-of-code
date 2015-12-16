@@ -1,4 +1,4 @@
-//*** Day 3 Exercise 1 and 2 ***
+//*** Day 4 Exercise 1 and 2 ***
 var crypto = require('crypto');
 
 var md5Hash = function (key, match) {
