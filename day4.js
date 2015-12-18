@@ -7,11 +7,11 @@ var md5Hash = function (key, match) {
 
   while (hash.indexOf(match) !== 0) {
     var data = key + number.toString();
-    var hash = require('crypto').createHash('md5').update(data).digest('hex');
+    hash = require('crypto').createHash('md5').update(data).digest('hex');
     number += 1;
   }
   return number - 1;
-}
+};
 
 var input = 'ckczppom';
 

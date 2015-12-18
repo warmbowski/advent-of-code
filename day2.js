@@ -4,7 +4,7 @@ var howMuchPaper = function(packageList) {
   var total = 0;
 
   packages.forEach(function(dims) {
-    var lwh = dims.split('x').sort(function(a, b){return a-b});
+    var lwh = dims.split('x').sort(function(a, b){ return a-b; });
     var sa = (+lwh[0] * +lwh[1] * 3) + (+lwh[1] * +lwh[2] * 2) + (+lwh[2] * +lwh[0] * 2);
     total += sa;
   });
@@ -17,7 +17,7 @@ var howMuchRibbon = function(packageList) {
   var total = 0;
 
   packages.forEach(function(dims) {
-    var lwh = dims.split('x').sort(function(a, b){return a-b});
+    var lwh = dims.split('x').sort(function(a, b){ return a-b; });
     var lenRib = (+lwh[0] * 2) + (lwh[1] * 2);
     var lenBow = +lwh[0] * +lwh[1] * +lwh[2];
     total += lenRib + lenBow;
