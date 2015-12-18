@@ -54,7 +54,6 @@ var housesVisitedBySantaAndRoboSanta = function(directions) {
     }
     houses[coord[rem][0] + ':' + coord[rem][1]] += 1;
   }
-  // console.log(Object.keys(houses[0]).length)
   return Object.keys(houses).length;
 };
 
